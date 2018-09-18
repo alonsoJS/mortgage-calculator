@@ -1,5 +1,3 @@
-
-
 .calculator {
   clear: both;
   width: 93.5%;
@@ -32,5 +30,34 @@
 }
 
 .calculator__range-input {
-  margin-top: 5px;
+  width: 64%;
+  margin-top: 8px;
+  padding-left: 11px;
+}
+
+.calculator__input-container {
+  display: flex;
+  align-items: center;
+  margin-top: -5px;
+  justify-content: space-between;
+}
+
+.calculator__direct-slider-input {
+  height: 42px;
+  width: 20%;
+  border: 1px solid #A6A6A6;
+  border-radius: 6px;
+  font-family: 'Helvetica Neue';
+  font-size: 14px;
+  font-weight: 400;
+  color: #0D0D0D;
+  text-align: center;
+}
+
+.calculator__reference-value {
+  margin: 0;
+  font-family: 'Helvetica Neue';
+  font-size: 14px;
+  font-weight: 400;
+  color: #3E3D3F;
 }
