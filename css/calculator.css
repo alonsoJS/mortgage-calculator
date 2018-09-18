@@ -1,0 +1,36 @@
+
+
+.calculator {
+  clear: both;
+  width: 93.5%;
+  margin: 0 auto;
+  border-radius: 4px;
+  padding: 9px 20px;
+  box-shadow: 0 2px 4px rgba(0,0,0,.5);
+}
+
+.calculator__title {
+  font-family: 'Helvetica Neue';
+  font-size: 12px;
+  font-weight: 400;
+  color: #3E3D3F;
+  letter-spacing: .21px;
+  padding-bottom: 7px;
+  border-bottom: 1px solid #cacaca;
+}
+
+.calculator__form {
+  padding-top: 9px;
+}
+
+.calculator__years-of-mortgage {
+  font-family: 'Helvetica Neue';
+  font-size: 12px;
+  font-weight: 700;
+  color: #3E3D3F;
+  letter-spacing: .16px
+}
+
+.calculator__range-input {
+  margin-top: 5px;
+}

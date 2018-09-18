@@ -22,25 +22,6 @@ body {
   margin-bottom: 21px;
 }
 
-.calculator {
-  clear: both;
-  width: 93.5%;
-  margin: 0 auto;
-  border-radius: 4px;
-  padding: 9px 20px;
-  box-shadow: 0 2px 4px rgba(0,0,0,.5);
-}
-
-.calculator__title {
-  font-family: 'Helvetica Neue';
-  font-size: 12px;
-  font-weight: 400;
-  color: #3E3D3F;
-  letter-spacing: .21px;
-  padding-bottom: 7px;
-  border-bottom: 1px solid #cacaca;
-}
-
 @media screen and (min-width: 600px) and (max-width: 899px) {
   /* Tablet */
 }
