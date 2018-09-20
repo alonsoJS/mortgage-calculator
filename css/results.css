@@ -9,6 +9,23 @@
   background: #EAF6FA;
   padding-top: 13px;
   max-width: 470px;
+  transform: translateY(-100%);
+}
+
+.results--animate {
+  transform: translateY(0);
+  animation-name: showResults;
+  animation-duration: .5s;
+  animation-timing-function: ease-out;
+}
+
+@keyframes showResults {
+  from { 
+    transform: translateY(-100%)
+  }
+  to { 
+    transform: translateY(0)
+  }
 }
  
 .results__title {
@@ -62,8 +79,7 @@
     margin-right: 17px;
     padding-left: 59px;
     padding-right: 43px;
-
-    height: 441px;
+    transform: translateY(0);
   }
 
   .results__title {

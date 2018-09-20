@@ -1,4 +1,6 @@
 var Calculator  = function () {
+  // Results section (for mobile animation purposes)
+  this.el_resultsSection = document.querySelector('.results');
   // Calc results
   this.principleAndInterest = 0;
   this.tax = 0;
@@ -30,7 +32,11 @@ Calculator.prototype = {
       if (this.validateForm()) {
         this.removeErrors();
         this.calculate();
-        this.showResults();
+        this.printResults();
+
+        if (this.isMobile()) {
+          this.mobile_showResultBox();
+        }
       }
     }.bind(this));
 
@@ -82,14 +88,24 @@ Calculator.prototype = {
     this.monthlyPayment = this.principleAndInterest + this.tax + this.insurance;
   },
 
-  showResults: function () { 
+  printResults: function () { 
     this.el_principleAndInterest.innerHTML = this.principleAndInterest.toFixed(2);
     this.el_tax.innerHTML = this.tax.toFixed(2);
     this.el_insurance.innerHTML = this.insurance.toFixed(2);
     this.el_monthlyPayment.innerHTML = this.monthlyPayment.toFixed(2);
   },
 
-  mobile_showResultBox: function () { console.log('mobile show result box'); }
+  isMobile: function () {
+    if (window.innerWidth < 780) {
+      return true;
+    } else {
+      return false;
+    }
+  },
+
+  mobile_showResultBox: function () { 
+    this.el_resultsSection.className += ' results--animate';
+  }
 }
 
 // App init
