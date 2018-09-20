@@ -1,6 +1,8 @@
 var Calculator  = function () {
   // Results section (for mobile animation purposes)
   this.el_resultsSection = document.querySelector('.results');
+  // Number inputs (for key validation)
+  this.el_numberInputs = document.querySelectorAll('.calculator__input-number');
   // Calc results
   this.principleAndInterest = 0;
   this.tax = 0;
@@ -28,22 +30,24 @@ Calculator.prototype = {
   constructor: Calculator,
 
   eventsInit: function () {
-    this.submitButton.addEventListener('click', function () {
-      if (this.validateForm()) {
-        this.removeErrors();
-        this.calculate();
-        this.printResults();
-        this.changeTextToSubmitButton();
-
-        if (this.isMobile()) {
-          this.mobile_showResultBox();
-        }
-      }
-    }.bind(this));
-
+    this.submitButton.addEventListener('click', this.startForm.bind(this));
+    
     for (var i = 0; i < this.el_sliders.length; i++) {
       this.el_sliders[i].addEventListener('input', this.changeSliderValueBox);
       this.el_sliders[i].addEventListener('change', this.changeSliderValueBox); // Input doesn't work on IE11
+    }
+  },
+
+  startForm: function () {
+    if (this.validateForm()) {
+      this.removeErrors();
+      this.calculate();
+      this.printResults();
+      this.changeTextToSubmitButton();
+
+      if (this.isMobile()) {
+        this.mobile_showResultBox();
+      }
     }
   },
 
@@ -59,7 +63,7 @@ Calculator.prototype = {
       if (el.value === '') { 
         this.showError(el);
         isValid = false;
-      }
+      } 
     }.bind(this));
 
     return isValid;
