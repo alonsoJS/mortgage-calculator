@@ -96,10 +96,12 @@ Calculator.prototype = {
     this.el_insurance.innerHTML = this.insurance.toFixed(2);
     this.el_monthlyPayment.innerHTML = this.monthlyPayment.toFixed(2);
 
-    document.querySelectorAll(".results--no-calc").forEach(function (el) {
+    var calcResults = document.querySelectorAll(".results--no-calc");
+
+    for (var i = 0; i < calcResults.length; i++) {
       // Makes result texts darker
-      el.className = el.className.replace( /(?:^|\s)results--no-calc(?!\S)/g , '' );
-    });
+      calcResults[i].className = calcResults[i].className.replace( /(?:^|\s)results--no-calc(?!\S)/g , '' );
+    }
   },
 
   isMobile: function () {
