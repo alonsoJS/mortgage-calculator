@@ -93,6 +93,22 @@
   padding-left: 26px;
 }
 
+.calculator--error {
+  border-color: #DA3535;
+} 
+
+.calculator__error-message {
+  font-family: 'Helvetica Neue';
+  font-size: 10px;
+  font-weight: 700;
+  color: #DA3535;
+  display: none;
+}
+
+.calculator--show {
+  display: block;
+}
+
 .calculator__input-number-fixed-text {
   font-family: 'Helvetica Neue';
   font-size: 14px;
