@@ -32,10 +32,22 @@ input[type='number'] {
   -moz-appearance:textfield;
 }
 
-@media screen and (min-width: 600px) and (max-width: 899px) {
-  /* Tablet */
-}
+@media screen and (min-width: 780px) {
+  main {
+    justify-content: center;
+    width: 100%;
+    display: flex;
+    align-items: center;
+  }
 
-@media screen and (min-width: 900px) {
-  /* Desktop */
+  .main-title {
+    font-size: 22px;
+    font-weight: 400;
+    margin-top: 15px;
+    float: none;
+    margin: 15px auto;
+    padding-bottom: 16px;
+    letter-spacing: 0;
+    margin-bottom: 25px;
+  }
 }

@@ -1,10 +1,14 @@
 .calculator {
+  position: relative;
   clear: both;
   width: 93.5%;
   margin: 0 auto;
   border-radius: 4px;
-  padding: 9px 20px;
+  padding: 9px 20px 18px;
+  z-index: 2;
+  background: white;
   box-shadow: 0 2px 4px rgba(0,0,0,.5);
+  max-width: 470px;
 }
 
 .calculator__title {
@@ -21,7 +25,7 @@
   padding-top: 9px;
 }
 
-.calculator__years-of-mortgage {
+.calculator__input-label {
   font-family: 'Helvetica Neue';
   font-size: 12px;
   font-weight: 700;
@@ -40,6 +44,10 @@
   margin-top: -5px;
   justify-content: space-between;
   margin-bottom: 14px;
+}
+
+.calculator--increased-bottom-margin {
+  margin-bottom: 21px;
 }
 
 .calculator__direct-slider-input {
@@ -64,4 +72,125 @@
 
 .calculator--reference-first {
   width: 7.55%;
+}
+
+.calculator__input-with-fixed-text {
+  position: relative;
+}
+
+.calculator__input-number {
+  display: block;
+  border: 1px solid #333;
+  height: 42px;
+  margin-top: 3px;
+  width: 100%;
+  border-radius: 6px;
+  font-family: 'Helvetica Neue';
+  font-size: 14px;
+  font-weight: 400;
+  color: #3E3D3F;
+  line-height: 14px;
+  padding-left: 26px;
+}
+
+.calculator__input-number-fixed-text {
+  font-family: 'Helvetica Neue';
+  font-size: 14px;
+  font-weight: 400;
+  color: #3E3D3F;
+  position: absolute;
+  line-height: 14px;
+  top: 15px;
+  left: 15px;
+}
+
+.calculator__row {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 21px;
+}
+
+.calculator__column {
+  width: 46.5%;
+}
+
+.calculator__submit {
+  display: block;
+  width: 100%;
+  background: #0077C0;
+  margin-top: 18px;
+  height: 42px;
+  border-radius: 6px;
+  border: 0;
+  color: white;
+  font-family: 'Helvetica Neue';
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: .6px;
+}
+
+@media screen and (min-width: 780px){
+  .calculator {
+    margin: 0;
+    padding: 24px 38px 39px;
+  }
+
+  .calculator__title {
+    font-size: 16px;
+    letter-spacing: .4px;
+    padding-bottom: 13px;
+    margin-bottom: 27px;
+  }
+
+  .calculator__input-label {
+    font-size: 14px;
+  }
+
+  .calculator__form {
+    padding-left: 4px;
+  }
+
+  .calculator__direct-slider-input {
+    /* Cambiar clase */
+    width: 15.5%;
+    height: 46px;
+  }
+
+  .calculator__range-input {
+    width: 67.5%;
+    margin-left: -17px;
+  }
+
+  .calculator__reference-value {
+    font-size: 16px;
+  }
+
+  .calculator--reference-second {
+    margin-left: -10px;
+  }
+
+  .calculator__input-container {
+    margin-bottom: 20px;
+  }
+
+  .calculator__input-number {
+    height: 46px;
+    font-size: 16px;
+    padding-left: 37px;
+  }
+
+  .calculator__column {
+    width: 47.5%;
+  }
+
+  .calculator__input-number-fixed-text {
+    font-size: 16px;
+    left: 24px;
+  }
+
+  .calculator__submit {
+    font-size: 16px;
+    margin-top: 19px;
+    height: 45px;
+  }
 }

@@ -5,37 +5,87 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,user-scalable=0"/>
-  <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/range-input-styles.css">
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/calculator.css">
+  <link rel="stylesheet" href="css/results.css">
 </head>
 <body>
   <h1 class="main-title">Mortgage Calculator</h1>
-  <section class="calculator">
-    <h2 class="calculator__title">Change values to calculate your results</h2>
-    <div class="calculator__form">
-      <label for="years-of-mortgage" class="calculator__years-of-mortgage">Years of mortgage</label>
-      <div class="calculator__input-container">
-        <p class="calculator__reference-value calculator--reference-first">1</p>
-        <input class="calculator__range-input" type="range" min="1" max="40" id="years-of-mortgage">
-        <p class="calculator__reference-value">40 </p>
-        <input class="calculator__direct-slider-input" type="number">
+  <main>
+    <!-- Calculator -->
+    <section class="calculator">
+      <h2 class="calculator__title">Change values to calculate your results</h2>
+      <div class="calculator__form">
+        <!-- First slider -->
+        <label for="years-of-mortgage" class="calculator__input-label">Years of mortgage</label>
+        <div class="calculator__input-container">
+          <p class="calculator__reference-value calculator--reference-first">1</p>
+          <input class="calculator__range-input" type="range" min="1" max="40" id="years-of-mortgage">
+          <p class="calculator__reference-value calculator--reference-second">40 </p>
+          <input class="calculator__direct-slider-input" type="number">
+        </div>
+        <!-- Second slider -->
+        <label for="rate-of-interest" class="calculator__input-label">Rate of interest (%)</label>
+        <div class="calculator__input-container calculator--increased-bottom-margin">
+          <p class="calculator__reference-value calculator--reference-first">0.1</p>
+          <input class="calculator__range-input" type="range" min="1" max="40" id="rate-of-interest">
+          <p class="calculator__reference-value calculator--reference-second">10 </p>
+          <input class="calculator__direct-slider-input" type="number">
+        </div>
+        <!-- Loan amount input -->
+        <label for="" class="calculator__input-label">Loan Amount</label>
+        <div class="calculator__input-with-fixed-text">
+            <input type="number" class="calculator__input-number">
+            <span class="calculator__input-number-fixed-text">$</span>
+        </div>
+        <!-- Annual values -->
+        <div class="calculator__row">
+          <!-- Annual Tax -->
+          <div class="calculator__column">
+              <label for="" class="calculator__input-label">Annual Tax</label>
+              <div class="calculator__input-with-fixed-text">
+                  <input type="number" class="calculator__input-number">
+                  <span class="calculator__input-number-fixed-text">$</span>
+              </div>
+          </div>
+          <!-- Annual Insurance -->
+          <div class="calculator__column">
+              <label for="" class="calculator__input-label">Annual Insurance</label>
+              <div class="calculator__input-with-fixed-text">
+                  <input type="number" class="calculator__input-number">
+                  <span class="calculator__input-number-fixed-text">$</span>
+              </div>
+          </div>
+        </div>
+        <button class="calculator__submit">CALCULATE</button>
       </div>
+    </section>
 
-      <label for="years-of-mortgage" class="calculator__years-of-mortgage">Rate of interest (%)</label>
-      <div class="calculator__input-container">
-        <p class="calculator__reference-value calculator--reference-first">0.1</p>
-        <input class="calculator__range-input" type="range" min="1" max="40" id="years-of-mortgage">
-        <p class="calculator__reference-value">10 </p>
-        <input class="calculator__direct-slider-input" type="number">
+    <section class="results">
+      <h2 class="results__title">Your results</h2>
+      <!-- Principle & interest -->
+      <div class="results__row results--text-group">
+        <p class="results__category-text">Principle & Interest</p>
+        <p class="results__category-result">$ <span id="principle-interest-result">- -</span></p>
       </div>
-    </div>
-  </section>
-
-
-
-
+      <!-- Tax -->
+      <div class="results__row results--text-group">
+        <p class="results__category-text">Tax</p>
+        <p class="results__category-result">$ <span id="tax-result">- -</span></p>
+      </div>
+      <!-- Insurance -->
+      <div class="results__row results--text-group results--border-bottom">
+        <p class="results__category-text">Insurance</p>
+        <p class="results__category-result">$ <span id="insurance-result">- -</span></p>
+      </div>
+      <!-- Total monthly payment -->
+      <div class="results__row results--text-group results--no-padding">
+        <p class="results__category-text results--big-font--only-desktop">Total Monthly Payment</p>
+        <p class="results__category-result results--big-font">$ <span id="total-monthly-payment-result ">841.60</span></p>
+      </div>
+    </section>
+  </main>
   <script src="js/app.js"></script>
 </body>
 </html>
