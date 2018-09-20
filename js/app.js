@@ -1,3 +1,7 @@
+/**
+ * @author Alonso Jimenez <alonso_js@live.com>
+ */
+
 var Calculator  = function () {
   // Results section (for mobile animation purposes)
   this.el_resultsSection = document.querySelector('.results');
@@ -29,6 +33,7 @@ var Calculator  = function () {
 Calculator.prototype = {
   constructor: Calculator,
 
+  // Initiates all events for the app
   eventsInit: function () {
     this.submitButton.addEventListener('click', this.startForm.bind(this));
     
@@ -38,6 +43,7 @@ Calculator.prototype = {
     }
   },
 
+  // Start all the form once the submit button has been pressed
   startForm: function () {
     if (this.validateForm()) {
       this.removeErrors();
@@ -51,10 +57,12 @@ Calculator.prototype = {
     }
   },
 
+  // Changes the value box in the slider
   changeSliderValueBox: function () {
     this.parentNode.childNodes[7].value = this.value;
   },
 
+  // Validates the form to be fulfilled
   validateForm: function () {
     var isValid = true;
     
@@ -69,6 +77,7 @@ Calculator.prototype = {
     return isValid;
   },
 
+  // Removes the error once the form was submitted again
   removeErrors: function () {
     this.inputList.forEach(function(el) {
       var errorMsg = el.parentNode.childNodes[3]; // Export to a var for more readable code
@@ -78,11 +87,13 @@ Calculator.prototype = {
     }.bind(this));
   },
 
+  // Show errors caught in the input
   showError: function (el) { 
     el.className += ' calculator--error';
     el.parentNode.childNodes[3].className += ' calculator--show';
   },
 
+  // Calculates all the values submitted by the user
   calculate: function () {
     // Input List var
     // 0: Loan Amount
@@ -94,6 +105,8 @@ Calculator.prototype = {
     this.monthlyPayment = this.principleAndInterest + this.tax + this.insurance;
   },
 
+  
+  // Prints the results of the operation
   printResults: function () { 
     this.el_principleAndInterest.innerHTML = this.principleAndInterest.toFixed(2);
     this.el_tax.innerHTML = this.tax.toFixed(2);
@@ -102,12 +115,14 @@ Calculator.prototype = {
 
     var calcResults = document.querySelectorAll(".results--no-calc");
 
+    // Makes result texts darker
     for (var i = 0; i < calcResults.length; i++) {
-      // Makes result texts darker
       calcResults[i].className = calcResults[i].className.replace( /(?:^|\s)results--no-calc(?!\S)/g , '' );
     }
   },
 
+
+  // Check if mobile to show the animation for results panel
   isMobile: function () {
     if (window.innerWidth < 780) {
       return true;
@@ -116,10 +131,12 @@ Calculator.prototype = {
     }
   },
 
+  // Add class for results panel to get it animate
   mobile_showResultBox: function () { 
     this.el_resultsSection.className += ' results--animate';
   },
 
+  // Changes the inner text for the submit button after the first calculation
   changeTextToSubmitButton: function () {
     this.submitButton.innerHTML = 'RECALCULATE';
   }

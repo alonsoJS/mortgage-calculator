@@ -50,6 +50,10 @@
   margin-bottom: 21px;
 }
 
+/**
+ * @author Alonso Jimenez <alonso_js@live.com>
+ */
+
 .calculator__direct-slider-input {
   height: 42px;
   width: 20%;

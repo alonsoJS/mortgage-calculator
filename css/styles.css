@@ -1,3 +1,7 @@
+/**
+ * @author Alonso Jimenez <alonso_js@live.com>
+ */
+
 * {
   box-sizing: border-box;
 }
@@ -24,6 +28,7 @@ body {
 
 input[type=number]::-webkit-inner-spin-button, 
 input[type=number]::-webkit-outer-spin-button { 
+  /* Delete the arrows for the number input */
   -webkit-appearance: none; 
   margin: 0; 
 }
