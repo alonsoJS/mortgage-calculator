@@ -42,7 +42,7 @@
 }
 
 .results--text-group {
-  border-bottom: 1px solid #333;
+  border-bottom: 1px solid #B2B2B2;
   align-items: center;
 }
 
@@ -66,8 +66,13 @@
   letter-spacing: .21px;
 }
 
+.results--no-calc {
+  opacity: .2;
+}
+
 .results--big-font {
   font-size: 18px;
+  font-weight: 700;
 }
 
 @media screen and (min-width: 780px){

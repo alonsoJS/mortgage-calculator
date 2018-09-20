@@ -11,7 +11,7 @@
   height: 8px;
   cursor: pointer;
   background: #cacaca;
-  border-radius: 1px;
+  border-radius: 5px;
   border: 0px solid #010101;
 }
 .calculator__range-input::-webkit-slider-thumb {
@@ -33,7 +33,7 @@
   height: 8px;
   cursor: pointer;
   background: #cacaca;
-  border-radius: 1px;
+  border-radius: 5px;
   border: 0px solid #010101;
 }
 .calculator__range-input::-moz-range-thumb {
@@ -47,7 +47,7 @@
 }
 .calculator__range-input::-ms-track {
   width: 100%;
-  height: 8px;
+  height: 24px;
   cursor: pointer;
   background: transparent;
   border-color: transparent;
@@ -56,12 +56,12 @@
 .calculator__range-input::-ms-fill-lower {
   background: #a9a9a9;
   border: 0px solid #010101;
-  border-radius: 2px;
+  border-radius: 0 5px 5px 0;
 }
 .calculator__range-input::-ms-fill-upper {
   background: #cacaca;
   border: 0px solid #010101;
-  border-radius: 2px;
+  border-radius: 0 5px 5px 0;
 }
 .calculator__range-input::-ms-thumb {
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5), 0px 0px 1px rgba(13, 13, 13, 0.5);
@@ -71,7 +71,6 @@
   border-radius: 50px;
   background: #ffffff;
   cursor: pointer;
-  height: 8px;
 }
 .calculator__range-input:focus::-ms-fill-lower {
   background: #cacaca;

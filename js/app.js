@@ -33,6 +33,7 @@ Calculator.prototype = {
         this.removeErrors();
         this.calculate();
         this.printResults();
+        this.changeTextToSubmitButton();
 
         if (this.isMobile()) {
           this.mobile_showResultBox();
@@ -52,7 +53,8 @@ Calculator.prototype = {
 
   validateForm: function () {
     var isValid = true;
-
+    
+    this.removeErrors();
     this.inputList.forEach(function(el) {
       if (el.value === '') { 
         this.showError(el);
@@ -93,6 +95,11 @@ Calculator.prototype = {
     this.el_tax.innerHTML = this.tax.toFixed(2);
     this.el_insurance.innerHTML = this.insurance.toFixed(2);
     this.el_monthlyPayment.innerHTML = this.monthlyPayment.toFixed(2);
+
+    document.querySelectorAll(".results--no-calc").forEach(function (el) {
+      // Makes result texts darker
+      el.className = el.className.replace( /(?:^|\s)results--no-calc(?!\S)/g , '' );
+    });
   },
 
   isMobile: function () {
@@ -105,6 +112,10 @@ Calculator.prototype = {
 
   mobile_showResultBox: function () { 
     this.el_resultsSection.className += ' results--animate';
+  },
+
+  changeTextToSubmitButton: function () {
+    this.submitButton.innerHTML = 'RECALCULATE';
   }
 }
 
