@@ -37,9 +37,27 @@ Calculator.prototype = {
   eventsInit: function () {
     this.submitButton.addEventListener('click', this.startForm.bind(this));
     
+    for (var i = 0; i < this.inputList.length; i++) {
+      this.inputList[i].addEventListener('keydown', this.validateKey);
+    }
+
     for (var i = 0; i < this.el_sliders.length; i++) {
       this.el_sliders[i].addEventListener('input', this.changeSliderValueBox);
       this.el_sliders[i].addEventListener('change', this.changeSliderValueBox); // Input doesn't work on IE11
+    }
+  },
+
+  // Validates the input to only have numbers
+  validateKey: function (e) {
+
+    // Prevents the e, E, + and - to be printed
+    if (e.key === 'e' || e.key === 'E' ||  e.key === '+' || e.key === '-') {
+      e.preventDefault();
+    }
+
+    // If for some reason the user can use letters, this will erase them from the input
+    if (!/^[0-9]*$/gm.test(this.value)) {
+      this.value = this.value.replace(/\D/g,'');
     }
   },
 
@@ -60,6 +78,9 @@ Calculator.prototype = {
   // Changes the value box in the slider
   changeSliderValueBox: function () {
     this.parentNode.childNodes[7].value = this.value;
+    // Fill lower part of the slider track to be blue
+    var val = (this.value - this.getAttribute('min')) / (this.getAttribute('max') - this.getAttribute('min'));
+    this.style.backgroundImage = '-webkit-gradient(linear, left top, right top, '+ 'color-stop(' + val + ', #1091CC), '+ 'color-stop(' + val + ', #C5C5C5)'+ ')';
   },
 
   // Validates the form to be fulfilled
@@ -134,6 +155,7 @@ Calculator.prototype = {
   // Add class for results panel to get it animate
   mobile_showResultBox: function () { 
     this.el_resultsSection.className += ' results--animate';
+    window.scrollTo(0,this.el_resultsSection.scrollHeight);
   },
 
   // Changes the inner text for the submit button after the first calculation
