@@ -78,6 +78,9 @@ Calculator.prototype = {
     // Fill lower part of the slider track to be blue
     // var val = (this.value - this.getAttribute('min')) / (this.getAttribute('max') - this.getAttribute('min'));
     // this.style.backgroundImage = '-webkit-gradient(linear, left top, right top, '+ 'color-stop(' + val + ', #1091CC), '+ 'color-stop(' + val + ', #C5C5C5)'+ ')';
+    if (document.documentMode || /Edge/.test(navigator.userAgent)) {
+      console.log('Hi IE or Edge');
+    }
   },
 
   // Validates the form to be fulfilled
