@@ -6,31 +6,13 @@
   box-sizing: border-box;
 }
 
-@font-face {
-  font-family: 'Helvetica Neue';
-  src: url('../fonts/HelveticaNeue-Roman.otf');
-  font-weight: 400;
-}
-
-@font-face {
-  font-family: 'Helvetica Neue';
-  src: url('../fonts/HelveticaNeue-Thin.otf');
-  font-weight: 300;
-}
-
-@font-face {
-  font-family: 'Helvetica Neue';
-  src: url('../fonts/HelveticaNeue-Heavy.otf');
-  font-weight: 700;
-}
-
 body {
   padding: 0;
   margin: 0;
 }
 
 .main-title {
-  font-family: 'Helvetica Neue';
+  font-family: 'Helvetica Neue', 'Arial', sans-serif;
   font-weight: 300;
   font-size: 20px;
   width: 93.7%;
@@ -57,26 +39,6 @@ input[type='number'] {
 
 main {
   padding-bottom: 20px;
-}
-
-@media screen and (min-width: 780px) {
-  main {
-    justify-content: center;
-    width: 100%;
-    display: flex;
-    align-items: center;
-  }
-
-  .main-title {
-    font-size: 22px;
-    font-weight: 400;
-    margin-top: 15px;
-    float: none;
-    margin: 15px auto;
-    padding-bottom: 16px;
-    letter-spacing: 0;
-    margin-bottom: 25px;
-  }
 }
 
 /**
@@ -114,7 +76,7 @@ main {
 }
  
 .results__title {
-  font-family: 'Helvetica Neue';
+  font-family: 'Helvetica Neue', 'Arial', sans-serif;
   font-size: 20px;
   font-weight: 400;
   color: #3E3D3F;
@@ -136,7 +98,7 @@ main {
 }
 
 .results__category-text {
-  font-family: 'Helvetica Neue';
+  font-family: 'Helvetica Neue', 'Arial', sans-serif;
   font-size: 12px;
   font-weight: 300;
   color: #3E3D3F;
@@ -144,7 +106,7 @@ main {
 }
 
 .results__category-result {
-  font-family: 'Helvetica Neue';
+  font-family: 'Helvetica Neue', 'Arial', sans-serif;
   font-size: 14px;
   font-weight: 300;
   color: #3E3D3F;
@@ -158,63 +120,6 @@ main {
 .results--big-font {
   font-size: 18px;
   font-weight: 700;
-}
-
-@media screen and (min-width: 780px){
-  .results {
-    margin: 0;
-    width: 298px;
-    max-width: 298px;
-    margin-left: -21px;
-    margin-right: 17px;
-    padding-left: 59px;
-    padding-right: 43px;
-    transform: translateY(0);
-  }
-
-  .results__title {
-    font-size: 26px;
-    margin-bottom: 37px;
-  }
-
-  .results__category-text {
-    font-weight: 400;
-    letter-spacing: 0;
-    font-size: 14px;
-    margin-bottom: 6px;
-  }
-
-  .results__category-result {
-    font-size: 18px;
-    font-weight: 700;
-    margin-top: 0;
-  }
-
-  .results--big-font {
-    font-size: 22px;
-  }
-
-  .results--big-font--only-desktop {
-    font-size: 18px;
-  }
-
-  .results--text-group {
-    padding-left: 6px;
-    border-bottom: 0;
-    display: block;
-    margin-bottom: 31px;
-  }
-
-  .results--border-bottom {
-    border-bottom: 1px solid #CBCBCB;
-    padding-bottom: 5px;
-    margin-bottom: 26px;
-  }
-
-  .results--no-padding {
-    padding-left: 4px;
-  }
-  
 }
 
 /* Styles for input range */
@@ -322,7 +227,7 @@ main {
 }
 
 .calculator__title {
-  font-family: 'Helvetica Neue';
+  font-family: 'Helvetica Neue', 'Arial', sans-serif;
   font-size: 12px;
   font-weight: 400;
   color: #3E3D3F;
@@ -336,7 +241,7 @@ main {
 }
 
 .calculator__input-label {
-  font-family: 'Helvetica Neue';
+  font-family: 'Helvetica Neue', 'Arial', sans-serif;
   font-size: 12px;
   font-weight: 700;
   color: #3E3D3F;
@@ -366,7 +271,7 @@ main {
   width: 20%;
   border: 1px solid #A6A6A6;
   border-radius: 6px;
-  font-family: 'Helvetica Neue';
+  font-family: 'Helvetica Neue', 'Arial', sans-serif;
   font-size: 14px;
   font-weight: 400;
   color: #0D0D0D;
@@ -375,7 +280,7 @@ main {
 
 .calculator__reference-value {
   margin: 0;
-  font-family: 'Helvetica Neue';
+  font-family: 'Helvetica Neue', 'Arial', sans-serif;
   font-size: 14px;
   font-weight: 400;
   color: #3E3D3F;
@@ -396,7 +301,7 @@ main {
   margin-top: 3px;
   width: 100%;
   border-radius: 6px;
-  font-family: 'Helvetica Neue';
+  font-family: 'Helvetica Neue', 'Arial', sans-serif;
   font-size: 14px;
   font-weight: 400;
   color: #3E3D3F;
@@ -415,7 +320,7 @@ main {
 } 
 
 .calculator__error-message {
-  font-family: 'Helvetica Neue';
+  font-family: 'Helvetica Neue', 'Arial', sans-serif;
   font-size: 10px;
   font-weight: 700;
   color: #DA3535;
@@ -427,7 +332,7 @@ main {
 }
 
 .calculator__input-number-fixed-text {
-  font-family: 'Helvetica Neue';
+  font-family: 'Helvetica Neue', 'Arial', sans-serif;
   font-size: 14px;
   font-weight: 400;
   color: #3E3D3F;
@@ -456,7 +361,7 @@ main {
   border-radius: 6px;
   border: 0;
   color: white;
-  font-family: 'Helvetica Neue';
+  font-family: 'Helvetica Neue', 'Arial', sans-serif;
   font-size: 14px;
   font-weight: 700;
   letter-spacing: .6px;
@@ -464,6 +369,78 @@ main {
 }
 
 @media screen and (min-width: 780px){
+  main {
+    justify-content: center;
+    width: 100%;
+    display: flex;
+    align-items: center;
+  }
+
+  .main-title {
+    font-size: 22px;
+    font-weight: 400;
+    margin-top: 15px;
+    float: none;
+    margin: 15px auto;
+    padding-bottom: 16px;
+    letter-spacing: 0;
+    margin-bottom: 25px;
+  }
+
+  .results {
+    margin: 0;
+    width: 298px;
+    max-width: 298px;
+    margin-left: -21px;
+    margin-right: 17px;
+    padding-left: 59px;
+    padding-right: 43px;
+    transform: translateY(0);
+  }
+
+  .results__title {
+    font-size: 26px;
+    margin-bottom: 37px;
+  }
+
+  .results__category-text {
+    font-weight: 400;
+    letter-spacing: 0;
+    font-size: 14px;
+    margin-bottom: 6px;
+  }
+
+  .results__category-result {
+    font-size: 18px;
+    font-weight: 700;
+    margin-top: 0;
+  }
+
+  .results--big-font {
+    font-size: 22px;
+  }
+
+  .results--big-font--only-desktop {
+    font-size: 18px;
+  }
+
+  .results--text-group {
+    padding-left: 6px;
+    border-bottom: 0;
+    display: block;
+    margin-bottom: 31px;
+  }
+
+  .results--border-bottom {
+    border-bottom: 1px solid #CBCBCB;
+    padding-bottom: 5px;
+    margin-bottom: 26px;
+  }
+
+  .results--no-padding {
+    padding-left: 4px;
+  }
+  
   .calculator {
     margin: 0;
     padding: 24px 38px 39px;
