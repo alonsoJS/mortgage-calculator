@@ -22,11 +22,7 @@ var Calculator  = function () {
   // Input value vars
   this.el_yearsOfMortgage = document.querySelector('#years-of-mortgage');
   this.el_rateOfInterest = document.querySelector('#rate-of-interest');
-  this.inputList = [
-    document.querySelector('#loan-amount'),
-    document.querySelector('#annual-tax'),
-    document.querySelector('#annual-insurance')
-  ];
+  this.inputList = document.querySelectorAll('.calculator__input-number');
   this.submitButton = document.querySelector('#submit');
 }
 
@@ -116,13 +112,13 @@ Calculator.prototype = {
 
   // Calculates all the values submitted by the user
   calculate: function () {
-    // Input List var
-    // 0: Loan Amount
-    // 1: Annual Tax
-    // 2: Annual Insurance
-    this.principleAndInterest = ((this.el_rateOfInterest.value / 100) / 12) * this.inputList[0].value / (1-Math.pow((1 + ((this.el_rateOfInterest.value / 100)/12)),-this.el_yearsOfMortgage.value*12));
-    this.tax = this.inputList[1].value / 12; 
-    this.insurance = this.inputList[2].value / 12;
+    var loanAmount = document.querySelector('#loan-amount');
+    var annualTax = document.querySelector('#annual-tax');
+    var annualInsurance = document.querySelector('#annual-insurance');
+
+    this.principleAndInterest = ((this.el_rateOfInterest.value / 100) / 12) * loanAmount.value / (1-Math.pow((1 + ((this.el_rateOfInterest.value / 100)/12)),-this.el_yearsOfMortgage.value*12));
+    this.tax = annualTax.value / 12; 
+    this.insurance = annualInsurance.value / 12;
     this.monthlyPayment = this.principleAndInterest + this.tax + this.insurance;
   },
 

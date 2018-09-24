@@ -179,7 +179,7 @@ main {
   width: 100%;
   height: 24px;
   cursor: pointer;
-  background: transparent;
+  background: #cacaca;
   border-color: transparent;
   color: transparent;
 }
@@ -206,7 +206,7 @@ main {
   background: #1091CC;
 }
 .calculator__range-input:focus::-ms-fill-upper {
-  background: #ebebeb;
+  background: #cacaca;
 }
 
 /**
