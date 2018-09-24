@@ -129,6 +129,19 @@ main {
   width: 100%;
   margin: 8px 0;
   border-radius: 6px;
+  background-image: -webkit-gradient(
+      linear,
+      left top,
+      right top,
+      color-stop(0, #1091CC),
+      color-stop(0, #CACACA)
+  );
+}
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  /* IE10 & IE11 CSS styles */
+  .ie1011 {
+    background-image: none;
+  }
 }
 .calculator__range-input:focus {
   outline: none;
@@ -139,6 +152,7 @@ main {
   cursor: pointer;
   border-radius: 5px;
   border: 0px solid #010101;
+  height: 6px;
 }
 .calculator__range-input::-webkit-slider-thumb {
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5), 0px 0px 1px rgba(13, 13, 13, 0.5) ;
