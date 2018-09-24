@@ -139,9 +139,15 @@ main {
 }
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
   /* IE10 & IE11 CSS styles */
-  .ie1011 {
+  .calculator--ie1011 {
     background-image: none;
   }
+}
+@supports (-ms-ime-align: auto) {
+  /* Microsoft EdgeV13&14 CSS styles */
+ .calculator--edge1314 {
+     background-image: none;
+ }
 }
 .calculator__range-input:focus {
   outline: none;

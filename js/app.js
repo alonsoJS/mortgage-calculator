@@ -77,12 +77,12 @@ Calculator.prototype = {
 
     // Fill lower part of the slider track to be blue
     
-    // if (document.documentMode || /Edge/.test(navigator.userAgent)) {
-    //   console.log('Hi IE or Edge');
-    // } else {
+    if (document.documentMode || /Edge/.test(navigator.userAgent)) {
+      console.log('Hi IE or Edge');
+    } else {
       var val = (this.value - this.getAttribute('min')) / (this.getAttribute('max') - this.getAttribute('min'));
       this.style.backgroundImage = '-webkit-gradient(linear, left top, right top, '+ 'color-stop(' + val + ', #1091CC), '+ 'color-stop(' + val + ', #C5C5C5)'+ ')';
-    // }
+    }
   },
 
   // Validates the form to be fulfilled
