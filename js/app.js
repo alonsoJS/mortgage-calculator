@@ -87,24 +87,25 @@ Calculator.prototype = {
     var isValid = true;
     
     this.removeErrors();
-    this.inputList.forEach(function(el) {
-      if (el.value === '') { 
-        this.showError(el);
+
+    for (var i = 0; i < this.inputList.length; i++) {
+      if (this.inputList[i].value === '') {
+        this.showError(this.inputList[i]);
         isValid = false;
-      } 
-    }.bind(this));
+      }
+    }
 
     return isValid;
   },
 
   // Removes the error once the form was submitted again
   removeErrors: function () {
-    this.inputList.forEach(function(el) {
-      var errorMsg = el.parentNode.childNodes[3]; // Export to a var for more readable code
+    for (var i = 0; i < this.inputList.length; i++) {
+      var errorMsg = this.inputList[i].parentNode.childNodes[3]; // Export to a var for more readable code
 
-      el.className = el.className.replace( /(?:^|\s)calculator--error(?!\S)/g , '' );
+      this.inputList[i].className = this.inputList[i].className.replace( /(?:^|\s)calculator--error(?!\S)/g , '' );
       errorMsg.className = errorMsg.className.replace( /(?:^|\s)calculator--show(?!\S)/g , '' );
-    }.bind(this));
+    }
   },
 
   // Show errors caught in the input
